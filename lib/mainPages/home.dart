@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:scrtproject/element/container.dart';
-import 'package:scrtproject/mainPages/FavoritePage.dart';
-import 'package:scrtproject/mainPages/LivePage.dart';
-import 'package:scrtproject/mainPages/MenuPage.dart';
-
 import 'package:scrtproject/search.dart';
 
 class home extends StatefulWidget {
@@ -16,59 +10,9 @@ class home extends StatefulWidget {
 }
 
 class _homeState extends State<home> {
-  int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
-    // Define your pages here
-    home(),
-    LivePage(),
-    FavoritePage(),
-    MenuPage(),
-  ];
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        child: ClipRRect(
-          borderRadius: BorderRadius.only(
-            topRight: Radius.circular(30),
-            topLeft: Radius.circular(30),
-            bottomLeft: Radius.circular(30),
-            bottomRight: Radius.circular(30),
-          ),
-          child: GNav(
-            gap: 8,
-            tabBorderRadius: 30,
-            padding: EdgeInsets.all(16),
-            tabBackgroundColor: Color.fromARGB(255, 241, 255, 186),
-            backgroundColor: Color.fromARGB(255, 1, 60, 64),
-            color: Color.fromARGB(255, 241, 255, 186),
-            activeColor: Color.fromARGB(255, 1, 60, 64),
-            // Color.fromARGB(255, 187, 203, 122),
-
-            tabs: [
-              GButton(
-                icon: (FontAwesomeIcons.home),
-                text: 'Home',
-              ),
-              GButton(
-                icon: (FontAwesomeIcons.headset),
-                text: 'Live',
-              ),
-              GButton(
-                icon: (FontAwesomeIcons.heart),
-                text: 'Favorite',
-              ),
-              GButton(
-                icon: (FontAwesomeIcons.bars),
-                text: 'Menu',
-              ),
-            ],
-          ),
-        ),
-      ),
-      body: Padding(
+    return Padding(
         padding: const EdgeInsets.all(14.0),
         child: SingleChildScrollView(
           child: Column(
@@ -250,9 +194,7 @@ class _homeState extends State<home> {
               )
             ],
           ),
-        ),
-      ),
-    );
+        ));
   }
 
   Text useraName(BuildContext context) {
